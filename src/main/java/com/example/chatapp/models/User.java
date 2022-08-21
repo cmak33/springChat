@@ -26,6 +26,8 @@ public class User implements UserDetails {
     @ElementCollection
     @Enumerated(EnumType.STRING)
     private Set<Role> roles;
+    @ManyToMany(mappedBy = "participants")
+    private Set<Chat> chats;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
