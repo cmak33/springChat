@@ -15,6 +15,7 @@ public class Chat {
     @GeneratedValue
     @Id
     private Long id;
+    private String name;
     @ManyToMany
     private Set<User> participants;
     @ElementCollection
