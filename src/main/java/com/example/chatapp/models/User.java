@@ -28,6 +28,8 @@ public class User implements UserDetails {
     private Set<Role> roles;
     @ManyToMany(mappedBy = "participants")
     private Set<Chat> chats;
+    @OneToMany(mappedBy = "creator")
+    private Set<Chat> createdChats;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

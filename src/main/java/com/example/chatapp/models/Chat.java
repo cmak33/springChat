@@ -18,6 +18,8 @@ public class Chat {
     private String name;
     @ManyToMany
     private Set<User> participants;
+    @ManyToOne
+    private User creator;
     @ElementCollection
     private List<ChatMessage> messages;
 }
