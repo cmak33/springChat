@@ -1,7 +1,7 @@
-package com.example.kinopoisk.controllers.authorisation;
+package com.example.chatapp.controllers.authorisation;
 
-import com.example.kinopoisk.models.entities.User;
-import com.example.kinopoisk.services.UserService;
+import com.example.chatapp.models.User;
+import com.example.chatapp.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

@@ -1,4 +1,4 @@
-package com.example.kinopoisk.controllers.authorisation;
+package com.example.chatapp.controllers.authorisation;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
