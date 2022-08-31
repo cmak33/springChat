@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="error"></div>
+<p th:text="${chat.getName()}"></p>
+<ul id="messageArea">
+    <li th:each="message : ${chat.getMessages()}" th:text="${message.getCreator().getUsername()+' : '+message.getMessage()}"></li>
+</ul>
+<form id="sendMessageForm">
+    <input id="message" type="text">
+    <input type="submit" value="send">
+</form>
+<form id="addUserForm">
+    <label for="usernameInput">username: </label>
+    <input id="usernameInput" type="text">
+    <input type="submit" value="add">
+</form>
+<form id="leaveForm" th:action="@{/home}">
+    <input type="submit" value="leave chat">
+</form>
+<form method="POST" th:if="${isCreator}" th:action="@{/chat/{id}/delete(id=${chat.getId()})}">
+    <input type="submit" value="delete">
+</form>
+<a th:href="@{/home}">home</a>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+<script src="/js/chat.js"></script>
+</body>
+</html>
