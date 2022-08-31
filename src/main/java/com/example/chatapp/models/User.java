@@ -23,12 +23,14 @@ public class User implements UserDetails {
     private String username;
     @NotBlank
     private String password;
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.EAGER)
     @Enumerated(EnumType.STRING)
     private Set<Role> roles;
     @ManyToMany(mappedBy = "participants")
+    @OrderBy("creationDate")
     private Set<Chat> chats;
     @OneToMany(mappedBy = "creator")
+    @OrderBy("creationDate")
     private Set<Chat> createdChats;
 
     @Override
