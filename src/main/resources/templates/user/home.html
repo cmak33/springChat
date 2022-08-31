@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p th:text="${user.getUsername()}"></p>
+<a th:href="@{/chat/list}">chat list</a>
+<form method = "POST" th:action="@{/chat/create}">
+    <label for="chatName">chat name</label>
+    <input type="text" id="chatName" name="chatName">
+    <input type="submit" value = "create">
+</form>
+<a th:href="@{/logout}">logout</a>
+</body>
+</html>
